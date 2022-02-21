@@ -562,7 +562,8 @@ async def notforu(_, m: Message):
 
 allcmd = ["play", "current", "playlist", "song", f"song@{USERNAME}", f"play@{USERNAME}", f"current@{USERNAME}", f"playlist@{USERNAME}"] + admincmds
 
-@Client.on_message(filters.command(allcmd) & filters.group & ~filters.chat(CHAT_ID) & ~filtersasync def not_chat(_, m: Message):
+@Client.on_message(filters.command(allcmd) & filters.group & ~filters.chat(CHAT_ID) & ~filters.chat(LOG_GROUP))
+async def not_chat(_, m: Message):
     buttons = [
             [
                 InlineKeyboardButton("CHANNEL", url="https://t.me/free_USA_TELGRAM_Account"),
